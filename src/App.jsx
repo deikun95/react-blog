@@ -1,8 +1,9 @@
+import PostList from "./Components/PostList/PostList";
 
 function App() {
-  return (
-    <h1>Hello Blog</h1>
-  );
+    return (
+		<PostList />
+	);
 }
 
 export default App;

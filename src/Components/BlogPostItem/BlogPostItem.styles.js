@@ -38,4 +38,16 @@ export const CloseBtn = styled.div`
     cursor: pointer;
     width: 20px;
     height: 20px;
+    transition: all ease 0.2s;
+    & path {
+        fill: #fff;
+        transition: all ease 0.2s;
+    }
+    &:hover {
+        & path {
+            fill: #ef5350;
+        }
+        width: 30px;
+        height: 30px;
+    }
 `;

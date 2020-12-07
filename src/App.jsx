@@ -1,9 +1,16 @@
-import PostList from "./Components/PostList/PostList";
+import { AppContainer } from './App.styles';
+import BlogHeader from './Components/BlogHeader/BlogHeader';
+import PostList from './Components/BlogPostList/BlogPostList';
 
 function App() {
     return (
-		<PostList />
-	);
+        <div>
+            <BlogHeader />
+            <AppContainer>
+                <PostList />
+            </AppContainer>
+        </div>
+    );
 }
 
 export default App;

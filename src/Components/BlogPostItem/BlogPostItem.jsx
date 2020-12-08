@@ -1,4 +1,4 @@
-import { ItemWrapper, ItemText, ItemPhoto, ItemBtns, CloseBtn } from './BlogPostItem.styles';
+import { ItemWrapper, ItemText, ItemPhoto, ItemBtns, CloseBtn, ItemHeader } from './BlogPostItem.styles';
 
 const PostItem = ({ post }) => {
     return (
@@ -13,7 +13,9 @@ const PostItem = ({ post }) => {
                     </svg>
                 </CloseBtn>
             </ItemBtns>
-            <h2>{post.title}</h2>
+            <ItemHeader>
+                <h2>{post.title}</h2>
+            </ItemHeader>
             <ItemText>{post.text}</ItemText>
             <ItemPhoto></ItemPhoto>
         </ItemWrapper>

@@ -1,4 +1,7 @@
 import { Header, HeaderBtn, HeaderFind, HeaderLogo, SecondLogoWord, FindIcon, FindInput } from './BlogHeader.styles';
+import BlogAddModal from '../BlogAddModal/BlogAddModal'
+
+
 const BlogHeader = () => {
     return (
         <Header>

@@ -9,6 +9,10 @@ body {
     background: #6be8a3; /* fallback for old browsers */
 }
 
+body.hidden-scroll {
+    overflow: hidden;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

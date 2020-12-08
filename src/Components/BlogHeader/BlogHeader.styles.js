@@ -15,6 +15,7 @@ export const HeaderLogo = styled.div`
     width: 145px;
     color: white;
     margin-top: 31px;
+    font-weight: 800;
 `;
 
 export const SecondLogoWord = styled.div`

@@ -11,7 +11,8 @@ export const ItemWrapper = styled.div`
     }
 `;
 
-export const ItemHeader = styled.div``;
+export const ItemHeader = styled.div`
+`;
 
 export const ItemText = styled.div`
     font-size: 18px;

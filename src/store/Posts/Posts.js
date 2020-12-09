@@ -37,14 +37,16 @@ class Posts {
     };
 
     handleAddPost = () => {
-        this.pushPost();
-        this.rootStore.modalModule.toggleModal();
+        if (!this.isBtnDisabled) {
+            this.pushPost();
+            this.rootStore.modalModule.toggleModal();
+        }
     };
 
-    deletePost = (id) => {
-        this.postList = this.postList.filter(post => post.id !== id)
-        console.log(this.postList)
-    }
+    deletePost = id => {
+        this.postList = this.postList.filter(post => post.id !== id);
+        console.log(this.postList);
+    };
 }
 
 export default Posts;

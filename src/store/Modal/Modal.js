@@ -11,7 +11,13 @@ class Modal {
     toggleModal = () => {
         this.isModalOpen = !this.isModalOpen;
         this.rootStore.postsModule.clearTempPost()
+        this.toggleScroll()
     };
+
+    toggleScroll = () => {
+        const body = document.querySelector('body')
+        body.classList.toggle('hidden-scroll')
+    }
 }
 
 export default Modal;

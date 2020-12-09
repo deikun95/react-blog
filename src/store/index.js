@@ -1,11 +1,12 @@
-import { makeAutoObservable } from 'mobx';
 import React from 'react';
-import ModalStore from './Modal/Modal';
+import ModalStore from './Modal';
+import PostsStore from './Posts'
+
 
 class Store {
     constructor() {
-        makeAutoObservable(this);
         this.modalModule = new ModalStore(this);
+        this.postsModule = new PostsStore(this);
     }
 }
 

@@ -1,8 +1,6 @@
 import { Header, HeaderBtn, HeaderFind, HeaderLogo, SecondLogoWord, FindIcon, FindInput } from './BlogHeader.styles';
-import BlogAddModal from '../BlogAddModal/BlogAddModal'
 
-
-const BlogHeader = () => {
+const BlogHeader = ({onHandleModal}) => {
     return (
         <Header>
             <HeaderLogo>
@@ -34,9 +32,9 @@ const BlogHeader = () => {
                         </g>
                     </svg>
                 </FindIcon>
-                <FindInput placeholder="Поиск"/>
+                <FindInput placeholder="Поиск" />
             </HeaderFind>
-            <HeaderBtn>
+            <HeaderBtn onClick={() => onHandleModal()}>
                 <svg
                     enableBackground="new 0 0 551.13 551.13"
                     viewBox="0 0 551.13 551.13"

@@ -90,7 +90,8 @@ export const ModalHeaderActions = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    position: relative;
 `;
 
 export const ModalFooterActions = styled.div`
@@ -104,19 +105,23 @@ export const ModalFooterActions = styled.div`
 export const ModalFooterBtn = styled.div`
     width: 170px;
     height: 35px;
-    background-color: #a900ff;
+    background-color: ${props => (props.isDisabled ? '#eeeeee' : '#a900ff')};
     text-align: center;
     padding-top: 10px;
     border-radius: 70px;
     color: white;
-    cursor: pointer;
-    transition: all ease .3s;
-    &:hover {
-        box-shadow: 23px 32px 53px #7cf1bd, -16px -8px 42px #ff71e0;
+    cursor: ${props => (props.isDisabled ? 'auto' : 'pointer')};
+    transition: all ease 0.3s;
+    &.active {
+        &:hover {
+            box-shadow: 23px 32px 53px #7cf1bd, -16px -8px 42px #ff71e0;
+        }
     }
 `;
 
 export const HeaderCloseBtn = styled.div`
+    position: absolute;
+    top: -15px;
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -132,4 +137,4 @@ export const HeaderCloseBtn = styled.div`
         width: 30px;
         height: 30px;
     }
-`
+`;

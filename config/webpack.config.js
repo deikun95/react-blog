@@ -417,6 +417,12 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
+                  [
+                    "@babel/plugin-proposal-decorators",
+                    {
+                      "legacy": true
+                    }
+                  ],
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
                     require.resolve('react-refresh/babel'),
@@ -437,7 +443,7 @@ module.exports = function (webpackEnv) {
               exclude: /@babel(?:\/|\\{1,2})runtime/,
               loader: require.resolve('babel-loader'),
               options: {
-                babelrc: false,
+                babelrc: true,
                 configFile: false,
                 compact: false,
                 presets: [

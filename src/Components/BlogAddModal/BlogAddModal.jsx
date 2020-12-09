@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react-lite';
 import { useStore } from '../../store';
 import {
     ModalContainer,
@@ -15,18 +16,18 @@ import {
     UploadIcon,
 } from './BlogAddModal.styles';
 
-
 const BlockAddModal = () => {
-    const {isModalOpen } = useStore()
+    const { postsModule, modalModule } = useStore();
+    const { handleAddPost, isBtnDisabled, setTempTitle, setTempText } = postsModule;
+    const {toggleModal} = modalModule
+
+
     return (
         <ModalBackground>
             <ModalContainer>
                 <ModalHeaderActions>
-                    <HeaderCloseBtn>
-                        <svg
-                            viewBox="0 0 511.992 511.992"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
+                    <HeaderCloseBtn onClick={() => toggleModal()}>
+                        <svg viewBox="0 0 511.992 511.992" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="m415.402344 495.421875-159.40625-159.410156-159.40625 159.410156c-22.097656 22.09375-57.921875 22.09375-80.019532 0-22.09375-22.097656-22.09375-57.921875 0-80.019531l159.410157-159.40625-159.410157-159.40625c-22.09375-22.097656-22.09375-57.921875 0-80.019532 22.097657-22.09375 57.921876-22.09375 80.019532 0l159.40625 159.410157 159.40625-159.410157c22.097656-22.09375 57.921875-22.09375 80.019531 0 22.09375 22.097657 22.09375 57.921876 0 80.019532l-159.410156 159.40625 159.410156 159.40625c22.09375 22.097656 22.09375 57.921875 0 80.019531-22.097656 22.09375-57.921875 22.09375-80.019531 0zm0 0"
                                 fill="#000"
@@ -35,12 +36,12 @@ const BlockAddModal = () => {
                     </HeaderCloseBtn>
                 </ModalHeaderActions>
                 <ModalHeader>
-                    <Label>Название поста:</Label>
-                    <HeaderInput />
+                    <Label>Заголовок:</Label>
+                    <HeaderInput onChange={setTempTitle} />
                 </ModalHeader>
                 <ModalText>
                     <Label>Содержание поста:</Label>
-                    <TextArea />
+                    <TextArea onChange={setTempText} />
                 </ModalText>
                 <ModalUpload>
                     <Label>Загрузить файл</Label>
@@ -82,11 +83,17 @@ const BlockAddModal = () => {
                     </UploadIcon>
                 </ModalUpload>
                 <ModalFooterActions>
-                    <ModalFooterBtn>Добавить пост</ModalFooterBtn>
+                    <ModalFooterBtn
+                        className={isBtnDisabled ? '' : 'active'}
+                        isDisabled={isBtnDisabled}
+                        onClick={handleAddPost}
+                    >
+                        Добавить пост
+                    </ModalFooterBtn>
                 </ModalFooterActions>
             </ModalContainer>
         </ModalBackground>
     );
 };
 
-export default BlockAddModal;
+export default observer(BlockAddModal);
